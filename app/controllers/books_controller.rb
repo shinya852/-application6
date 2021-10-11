@@ -9,7 +9,7 @@ class BooksController < ApplicationController
     # @user = User.find(@book.user_id)
     @book_comment = BookComment.new
     @book_comments = @book.book_comments
-  end
+    end
 
   def index
     @booknew = Book.new
@@ -57,7 +57,7 @@ class BooksController < ApplicationController
 
   def editing_user
     book = Book.find(params[:id])
-    if book.user != current_user
+    if book.user != current_user 
       redirect_to books_path
     end
   end
